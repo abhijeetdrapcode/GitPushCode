@@ -1,0 +1,19 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/auth-token": "^5.1.1",
+    "@octokit/rest": "^21.0.2",
+    "ignore": "^6.0.2",
+    "node-fetch": "^3.3.2"
+  }
+}
