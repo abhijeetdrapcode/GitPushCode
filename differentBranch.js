@@ -14,10 +14,10 @@ const octokit = new Octokit({
 });
 
 const REPO_OWNER = "abhijeet4rana";
-const REPO_NAME = "LMS2";
+const REPO_NAME = "AnotherTestingRepo";
 const MAIN_BRANCH = "main";
 
-// Utility function to generate formatted timestamp
+// function to generate formatted timestamp
 function generateTimestamp() {
   const timestamp = new Date();
   return `build-${timestamp.getFullYear()}-${String(
@@ -29,7 +29,6 @@ function generateTimestamp() {
 
 async function uploadWithNewBranch(folderPath) {
   try {
-    // Generate unified timestamp for branch and commit
     const timestampName = generateTimestamp();
 
     // Parse .gitignore

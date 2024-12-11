@@ -13,9 +13,9 @@ async function createRepositoryWithReadme(
   // Create an Octokit instance with your personal access token and fetch
   const octokit = new Octokit({
     // authStrategy: createTokenAuth,
-    auth: token, // Store your token in an environment variable
+    auth: token,
     request: {
-      fetch: fetch, // Explicitly pass fetch implementation
+      fetch: fetch,
     },
   });
 
@@ -25,7 +25,7 @@ async function createRepositoryWithReadme(
       name: repoName,
       description: description,
       private: isPrivate,
-      auto_init: false, // We'll manually add the README
+      auto_init: false,
     });
 
     // Create a README.md file
@@ -45,7 +45,7 @@ Add your project documentation here.
     await octokit.repos.createOrUpdateFileContents({
       owner: repo.owner.login,
       repo: repoName,
-      path: "README.md",
+      path: "ReadME.md",
       message: "Initial commit: Add README",
       content: readmeBase64,
       branch: "main",
@@ -59,10 +59,10 @@ Add your project documentation here.
   }
 }
 
-// Example usage
-// Uncomment and replace with your details
-createRepositoryWithReadme("my-new-repo", "A description of my project", false)
+createRepositoryWithReadme(
+  "AnotherTestingRepo",
+  "A description of my project",
+  false
+)
   .then((repo) => console.log(repo))
   .catch((err) => console.error(err));
-
-// module.exports = createRepositoryWithReadme;
